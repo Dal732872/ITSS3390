@@ -1,0 +1,208 @@
+﻿
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Spanish Rugby News</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: Verdana;
+      background-color: #FFFFFF;
+      margin: 0;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #C01D02;
+    }
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight:bold;
+    }
+    .topnav a:hover {
+      background-color: #000000;
+      color: #FFFFFF;
+    }
+    .topnav a.active {
+      background-color: #DD9C00;
+      color: white;
+    }
+
+    .menu {
+      width: 20%;
+      text-align: left;
+      background-color: #00419B;
+      color: white;
+      padding-top: 15px;
+    }
+    .menu a {
+      display: block;
+      color: #FFFFFF;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .menu a:hover {
+      background-color: #DD9C00;
+      color: #000000;
+    }
+
+    /* Main content */
+    .main {
+      width: 80%;
+      padding: 15px;
+      overflow: auto;
+    }
+
+    .hero {
+      width: 100%;
+      max-height: 325px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+    }
+
+    .results-strip {
+      background-color: #C01D02;
+      padding: 20px;
+      margin: 15px 15px 15px 0px ;
+      display: flex;
+      overflow: visible;
+      color: white;
+    }
+    .match {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    .news-section {
+      display: flex;
+      gap: 15px;
+      overflow:auto;
+    }
+    .news-card {
+      background-color: #f8f8f8;
+      overflow: hidden;
+    }
+    .news-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .news-card h4 {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+    }
+    .news-card p {
+      padding: 0 10px 10px 10px;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #e5e5e5;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      .menu { width: 100%; }
+      .main { width: 100%; }
+      .news-section { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="topnav">
+    <a class="active" href="#">HOME</a>
+    <a href="#">News</a>
+    <a href="#">Standings</a>
+    <a href="#">Calendar</a>
+    <a href="#">Results</a>
+    <a href="#">Live</a>
+  </div>
+
+  <!-- Main container -->
+  <div style="display:flex;">
+    <!-- Sidebar -->
+    <div class="menu">
+      <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
+      <a href="#">National Team</a>
+      <a href="#">European Rugby</a>
+      <a href="#">Division de Honor</a>
+      <a href="#">Division de Honor B</a>
+      <a href="#">Spanish Cup</a>
+      <a href="#">Regional</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+
+      <!-- Hero image -->
+      <div class="hero">
+        <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp" alt="Spanish National Rugby Team">
+      </div>
+
+      <!-- Match results -->
+      <div class="results-strip">
+        <div class="match">
+          <img src="https://www.viasona.cat/imatges/clubsesportius/unio-esportiva-santboiana-escut.jpg" alt="Santboiana" height=50px width=50px> 25 - 28 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsBLhXHW_x9jyc8zyo-aK1PNYC2SfUTJXB6w&s" height=50px width=50px alt="VRAC">
+        </div>
+        <div class="match">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0JlHoUlbphwCJ_3esPhEahDaAHC6JqZKVg&s" height=50px width=50px alt="El Salvador">
+          <span>31 - 20</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4_aT06b8BmRv1nCNX7tlTjllT9uzvQBD4yA&s" height=50px width=50px alt="Alcobendas">
+        </div>
+        <div class="match">
+          <img src="https://api.clupik.com/clubs/1262/seo/image.jpg" height=50px width=50px alt="Cisneros">
+          <span>14 - 14</span>
+          <img src="https://ordiziarugby.eus/wp-content/uploads/cropped-LOGO-BERRIA.png" height=50px width=50px alt="Ordizia">
+        </div>
+        <div class="match"><img src="https://cdn-icons-png.flaticon.com/512/51/51258.png" height=40px width=40px></div>
+      </div>
+
+      <!-- News -->
+        <div class="news-section">
+        <a href="newspagerugby.html" style="text-decoration:none; color:inherit;">
+          <img src="https://pbs.twimg.com/media/GR5SQdxWwAARdN0.jpg" alt="Spanish team">
+          <h4>Spain prepares for the European Championship</h4>
+          <p>The Spanish national team starts training camp ahead of the continental tournament.</p>
+        </div>
+        </a>
+        <div class="news-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8N34VJjPut4dwoYnBaeq5HsChr8fVpuNHaA&s" alt="Arturo Devesa Alcobendas">
+          <h4>Big signing at Alcobendas</h4>
+          <p>The Madrid club announces the arrival of an Argentine international player.</p>
+        </div>
+        <div class="news-card">
+          <img src="https://vracrugby.com/wp-content/uploads/2025/05/DSC_6868.jpg" alt="VRAC win">
+          <h4>VRAC strengthens its leadership</h4>
+          <p>The Valladolid side remains at the top of the table after their win in Santboi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
+  </footer>
+
+</body>
+</html>
+
