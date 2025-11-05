@@ -1,10 +1,8 @@
-﻿
 <!DOCTYPE html> 
 <html>
 <head>
   <title>Spanish Rugby News</title>
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
   <style>
     body {
@@ -36,10 +34,10 @@
 
     .menu {
       width: 20%;
-      text-align: left;
       background-color: #00419B;
       color: white;
       padding-top: 15px;
+      text-align: left;
     }
     .menu a {
       display: block;
@@ -47,13 +45,13 @@
       padding: 10px;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
     .menu a:hover {
       background-color: #DD9C00;
       color: #000000;
     }
 
-    /* Main content */
     .main {
       width: 80%;
       padding: 15px;
@@ -61,6 +59,7 @@
     }
 
     .hero {
+      position: relative;
       width: 100%;
       max-height: 325px;
       overflow: hidden;
@@ -68,37 +67,55 @@
     .hero img {
       width: 100%;
     }
+    .hero-title {
+      position: absolute;
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -60%); 
+      font-size: 85px; 
+      font-weight: 900;
+      color: #C01D02;
+      text-shadow: 4px 4px 12px rgba(0,0,0,0.9);
+      letter-spacing: 4px;
+    }
 
     .results-strip {
       background-color: #C01D02;
       padding: 20px;
-      margin: 15px 15px 15px 0px ;
+      margin: 15px 15px 15px 0;
       display: flex;
-      overflow: visible;
+      justify-content: space-between;
+      align-items: center;
       color: white;
     }
     .match {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 10px;
       font-weight: bold;
+      gap: 10px;
+    }
+
+    .arrow-btn {
+      cursor: pointer;
     }
 
     .news-section {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      overflow:auto;
     }
+
     .news-card {
       background-color: #f8f8f8;
       overflow: hidden;
+      border-radius: 5px;
     }
     .news-card img {
       width: 100%;
       height: 160px;
       object-fit: cover;
     }
+
     .news-card h4 {
       padding: 10px;
       font-size: 16px;
@@ -121,90 +138,116 @@
     @media(max-width: 768px) {
       .menu { width: 100%; }
       .main { width: 100%; }
-      .news-section { flex-direction: column; }
+      .news-section {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <div class="topnav">
-    <a class="active" href="#">HOME</a>
-    <a href="#">News</a>
-    <a href="#">Standings</a>
-    <a href="#">Calendar</a>
-    <a href="#">Results</a>
-    <a href="#">Live</a>
+<div class="topnav">
+  <a class="active" href="#">HOME</a>
+  <a href="#">News</a>
+  <a href="#">Standings</a>
+  <a href="#">Calendar</a>
+  <a href="#">Results</a>
+  <a href="#">Live</a>
+</div>
+
+<div style="display:flex;">
+
+  <div class="menu">
+    <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
+    <a onclick="filterContent('national')">National Team</a>
+    <a onclick="filterContent('european')">European Rugby</a>
+    <a onclick="filterContent('honor')">Division de Honor</a>
+    <a onclick="filterContent('b')">Division de Honor B</a>
+    <a onclick="filterContent('cup')">Spanish Cup</a>
+    <a onclick="filterContent('regional')">Regional</a>
+    <a onclick="filterContent('all')">Show All</a>
   </div>
 
-  <!-- Main container -->
-  <div style="display:flex;">
-    <!-- Sidebar -->
-    <div class="menu">
-      <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
-      <a href="#">National Team</a>
-      <a href="#">European Rugby</a>
-      <a href="#">Division de Honor</a>
-      <a href="#">Division de Honor B</a>
-      <a href="#">Spanish Cup</a>
-      <a href="#">Regional</a>
+  <div class="main">
+
+    <div class="hero">
+      <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp">
+      <div class="hero-title">ESPRugby</div>
     </div>
 
-    <!-- Main content -->
-    <div class="main">
+    <div class="results-strip" id="resultsStrip">
+      <div class="match">🇪🇸 Santboiana 25 - 28 VRAC</div>
+      <div class="match">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
+      <div class="match">🇪🇸 Cisneros 14 - 14 Ordizia</div>
+      <div class="arrow-btn" onclick="nextResults()">➡️</div>
+    </div>
 
-      <!-- Hero image -->
-      <div class="hero">
-        <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp" alt="Spanish National Rugby Team">
-      </div>
+    <div class="news-section">
 
-      <!-- Match results -->
-      <div class="results-strip">
-        <div class="match">
-          <img src="https://www.viasona.cat/imatges/clubsesportius/unio-esportiva-santboiana-escut.jpg" alt="Santboiana" height=50px width=50px> 25 - 28 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsBLhXHW_x9jyc8zyo-aK1PNYC2SfUTJXB6w&s" height=50px width=50px alt="VRAC">
-        </div>
-        <div class="match">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0JlHoUlbphwCJ_3esPhEahDaAHC6JqZKVg&s" height=50px width=50px alt="El Salvador">
-          <span>31 - 20</span>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4_aT06b8BmRv1nCNX7tlTjllT9uzvQBD4yA&s" height=50px width=50px alt="Alcobendas">
-        </div>
-        <div class="match">
-          <img src="https://api.clupik.com/clubs/1262/seo/image.jpg" height=50px width=50px alt="Cisneros">
-          <span>14 - 14</span>
-          <img src="https://ordiziarugby.eus/wp-content/uploads/cropped-LOGO-BERRIA.png" height=50px width=50px alt="Ordizia">
-        </div>
-        <div class="match"><img src="https://cdn-icons-png.flaticon.com/512/51/51258.png" height=40px width=40px></div>
-      </div>
-
-      <!-- News -->
-        <div class="news-section">
+      <div class="news-card cat-national cat-european">
         <a href="newspagerugby.html" style="text-decoration:none; color:inherit;">
-          <img src="https://pbs.twimg.com/media/GR5SQdxWwAARdN0.jpg" alt="Spanish team">
+          <img src="https://pbs.twimg.com/media/GR5SQdxWwAARdN0.jpg">
           <h4>Spain prepares for the European Championship</h4>
           <p>The Spanish national team starts training camp ahead of the continental tournament.</p>
-        </div>
         </a>
-        <div class="news-card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8N34VJjPut4dwoYnBaeq5HsChr8fVpuNHaA&s" alt="Arturo Devesa Alcobendas">
-          <h4>Big signing at Alcobendas</h4>
-          <p>The Madrid club announces the arrival of an Argentine international player.</p>
-        </div>
-        <div class="news-card">
-          <img src="https://vracrugby.com/wp-content/uploads/2025/05/DSC_6868.jpg" alt="VRAC win">
-          <h4>VRAC strengthens its leadership</h4>
-          <p>The Valladolid side remains at the top of the table after their win in Santboi.</p>
-        </div>
       </div>
+
+      <div class="news-card cat-honor cat-cup">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8N34VJjPut4dwoYnBaeq5HsChr8fVpuNHaA&s">
+        <h4>Big signing at Alcobendas</h4>
+        <p>The Madrid club announces the arrival of an Argentine international player.</p>
+      </div>
+
+      <div class="news-card cat-b cat-regional">
+        <img src="https://vracrugby.com/wp-content/uploads/2025/05/DSC_6868.jpg">
+        <h4>VRAC strengthens its leadership</h4>
+        <p>The Valladolid side remains at the top of the table after their win in Santboi.</p>
+      </div>
+
     </div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
-  </footer>
+<footer>
+  <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
+</footer>
+
+<script>
+let toggle = false;
+function nextResults(){
+  const strip = document.getElementById("resultsStrip");
+  if(!toggle){
+    strip.innerHTML = `
+      <div class="match">🇫🇷 Toulouse 19 - 18 La Rochelle</div>
+      <div class="match">🏴 Edinburgh 21 - 24 Glasgow</div>
+      <div class="match">🇮🇹 Benetton 17 - 22 Zebre</div>
+      <div class="arrow-btn" onclick="nextResults()">⬅️</div>`;
+  } else {
+    strip.innerHTML = `
+      <div class="match">🇪🇸 Santboiana 25 - 28 VRAC</div>
+      <div class="match">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
+      <div class="match">🇪🇸 Cisneros 14 - 14 Ordizia</div>
+      <div class="arrow-btn" onclick="nextResults()">➡️</div>`;
+  }
+  toggle = !toggle;
+}
+
+function filterContent(category) {
+  const cards = document.querySelectorAll('.news-card');
+  if (category === 'all') {
+    cards.forEach(card => card.style.display = 'block');
+    return;
+  }
+  cards.forEach(card => {
+    if (card.classList.contains('cat-' + category)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 
 </body>
 </html>
-
-
-
