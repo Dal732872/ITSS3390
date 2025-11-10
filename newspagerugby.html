@@ -1,11 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Spanish Rugby News</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+  <title>Spanish Rugby News - Spain prepares for the European Championship</title>
   <style>
-    body {
+        body {
       font-family: Verdana;
       background-color: #FFFFFF;
       margin: 0;
@@ -34,10 +32,10 @@
 
     .menu {
       width: 20%;
+      text-align: left;
       background-color: #00419B;
       color: white;
       padding-top: 15px;
-      text-align: left;
     }
     .menu a {
       display: block;
@@ -45,88 +43,32 @@
       padding: 10px;
       text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
     }
-    .menu a:hover, .menu a.active {
+    .menu a:hover {
       background-color: #DD9C00;
       color: #000000;
     }
-
+    .menu {
+      width: 20%;
+      text-align: left;
+      background-color: #00419B;
+      color: white;
+      padding-top: 15px;
+    }
+    .menu a {
+      display: block;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+    }
+    .menu a:hover {
+      background-color: #DD9C00;
+    }
     .main {
       width: 80%;
       padding: 15px;
       overflow: auto;
     }
-
-    .hero {
-      position: relative;
-      width: 100%;
-      max-height: 325px;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-    }
-    .hero-title {
-      position: absolute;
-      top: 50%; 
-      left: 50%; 
-      transform: translate(-50%, -60%); 
-      font-size: 85px; 
-      font-weight: 900;
-      color: #C01D02;
-      text-shadow: 4px 4px 12px rgba(0,0,0,0.9);
-      letter-spacing: 4px;
-    }
-
-    .results-strip {
-      background-color: #C01D02;
-      padding: 20px;
-      margin: 15px 15px 15px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-    }
-    .match {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      gap: 10px;
-    }
-
-    .arrow-btn {
-      cursor: pointer;
-    }
-
-    .news-section {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .news-card {
-      background-color: #f8f8f8;
-      overflow: hidden;
-      border-radius: 5px;
-    }
-    .news-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .news-card h4 {
-      padding: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #000000;
-    }
-    .news-card p {
-      padding: 0 10px 10px 10px;
-      font-size: 14px;
-    }
-
     footer {
       background-color: #e5e5e5;
       text-align: center;
@@ -134,142 +76,61 @@
       margin-top: 20px;
       font-size: 14px;
     }
-
-    @media(max-width: 768px) {
-      .menu { width: 100%; }
-      .main { width: 100%; }
-      .news-section {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
-
 <body>
 
 <div class="topnav">
-  <a class="active" href="#">HOME</a>
-  <a href="#">News</a>
-  <a href="#">Standings</a>
-  <a href="#">Calendar</a>
-  <a href="#">Results</a>
-  <a href="#">Live</a>
+  <a href="home.html">Home</a>
+  <a class="active" href="news.html">NEWS</a>
+  <a href="standings.html">Standings</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="results.html">Results</a>
+  <a href="live.html">Live</a>
 </div>
 
 <div style="display:flex;">
-
   <div class="menu">
-    <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
-    <a onclick="filterContent('national', this)">National Team</a>
-    <a onclick="filterContent('european', this)">European Rugby</a>
-    <a onclick="filterContent('honor', this)">Division de Honor</a>
-    <a onclick="filterContent('b', this)">Division de Honor B</a>
-    <a onclick="filterContent('cup', this)">Spanish Cup</a>
-    <a onclick="filterContent('regional', this)">Regional</a>
-    <a onclick="filterContent('all', this)">Show All</a>
+    <h3>Clubs</h3>
+    <a href="club_vrac.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsBLhXHW_x9jyc8zyo-aK1PNYC2SfUTJXB6w&s" height=50px width=50px alt="VRAC"</a>
+    <a href="club_silverstorm.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0JlHoUlbphwCJ_3esPhEahDaAHC6JqZKVg&s" height=50px width=50px alt="El Salvador"></a>
+    <a href="club_santboiana.html"><img src="https://www.viasona.cat/imatges/clubsesportius/unio-esportiva-santboiana-escut.jpg" alt="Santboiana" height=50px width=50px></a>
+    <a href="club_alcobendas.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4_aT06b8BmRv1nCNX7tlTjllT9uzvQBD4yA&s" height=50px width=50px alt="Alcobendas"></a>
+    <a href="club_cisneros.html"><img src="https://api.clupik.com/clubs/1262/seo/image.jpg" height=50px width=50px alt="Cisneros"></a>
   </div>
 
   <div class="main">
-
-    <div class="hero">
-      <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp">
-      <div class="hero-title">ESPRugby</div>
-    </div>
-
-    <div class="results-strip" id="resultsStrip">
-      <div class="match" data-cat="b regional">🇪🇸 Santboiana 25 - 28 VRAC</div>
-      <div class="match" data-cat="honor cup">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
-      <div class="match" data-cat="honor cup">🇪🇸 Cisneros 14 - 14 Ordizia</div>
-      <div class="arrow-btn" onclick="nextResults()">➡️</div>
-    </div>
-
-    <div class="news-section">
-
-      <div class="news-card cat-national cat-european">
-        <a href="newspagerugby.html" style="text-decoration:none; color:inherit;">
-          <img src="https://pbs.twimg.com/media/GR5SQdxWwAARdN0.jpg">
-          <h4>Spain prepares for the European Championship</h4>
-          <p>The Spanish national team starts training camp ahead of the continental tournament.</p>
-        </a>
-      </div>
-
-      <div class="news-card cat-honor cat-cup">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8N34VJjPut4dwoYnBaeq5HsChr8fVpuNHaA&s">
-        <h4>Big signing at Alcobendas</h4>
-        <p>The Madrid club announces the arrival of an Argentine international player.</p>
-      </div>
-
-      <div class="news-card cat-b cat-regional">
-        <img src="https://vracrugby.com/wp-content/uploads/2025/05/DSC_6868.jpg">
-        <h4>VRAC strengthens its leadership</h4>
-        <p>The Valladolid side remains at the top of the table after their win in Santboi.</p>
-      </div>
-
-    </div>
+    <h1>Spain prepares for the European Championship</h1>
+    <p><em>Published: Javier Méndez. October 2025</em></p>
+    <img src="https://pbs.twimg.com/media/GR5SQdxWwAARdN0.jpg" alt="Spanish team" width=100%>
+    <p>
+      The Spanish national rugby team is entering the final phase of its preparation for 
+      the upcoming European Championship. With an impressive series of warm-up matches, 
+      the "Leones" have shown significant progress both in attack and defense. 
+    </p>
+    <p>
+      Coach Santiago Santos emphasized the importance of maintaining discipline and 
+      consistency: "We have a young team, but with great potential. Our goal is to 
+      compete at the highest level and prove that Spanish rugby belongs among the best in Europe."
+    </p>
+    <p>
+      The squad will face Georgia, Portugal, and Romania in the group stage. 
+      The opening match against Georgia is expected to be a real test for Spain’s 
+      physical strength and tactical preparation. 
+    </p>
+    <p>
+      Fans across Spain are excited, and the federation expects record-breaking 
+      attendance for the home matches in Butarque (Leganés, Madrid) and José Zorrilla (Valladolid). The success of 
+      the national team could also inspire growth in domestic competitions, 
+      bringing more visibility to rugby across the country.
+    </p>
+    <p><strong>Stay tuned for live updates and exclusive coverage of the tournament here at Spanish Rugby News.</strong></p>
   </div>
 </div>
 
 <footer>
-  <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
-</footer>
-
-<script>
-let toggle = false;
-function nextResults(){
-  const strip = document.getElementById("resultsStrip");
-  if(!toggle){
-    strip.innerHTML = `
-      <div class="match european" data-cat="european">🇫🇷 Toulouse 19 - 18 La Rochelle</div>
-      <div class="match european" data-cat="european">🏴 Edinburgh 21 - 24 Glasgow</div>
-      <div class="match european" data-cat="european">🇮🇹 Benetton 17 - 22 Zebre</div>
-      <div class="arrow-btn" onclick="nextResults()">⬅️</div>`;
-  } else {
-    strip.innerHTML = `
-      <div class="match" data-cat="b regional">🇪🇸 Santboiana 25 - 28 VRAC</div>
-      <div class="match" data-cat="honor cup">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
-      <div class="match" data-cat="honor cup">🇪🇸 Cisneros 14 - 14 Ordizia</div>
-      <div class="arrow-btn" onclick="nextResults()">➡️</div>`;
-  }
-  toggle = !toggle;
-}
-
-function filterContent(category, element) {
-  document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
-  element.classList.add('active');
-
-  const cards = document.querySelectorAll('.news-card');
-  cards.forEach(card => {
-    if (category === 'all') {
-      card.style.display = 'block';
-    } else {
-      card.style.display = card.classList.contains('cat-' + category) ? 'block' : 'none';
-    }
-  });
-
-  const strip = document.getElementById("resultsStrip");
-  if (category === 'national' || category === 'european') {
-    strip.innerHTML = `
-      <div class="match">🇫🇷 Toulouse 19 - 18 La Rochelle</div>
-      <div class="match">🏴 Edinburgh 21 - 24 Glasgow</div>
-      <div class="match">🇮🇹 Benetton 17 - 22 Zebre</div>
-      <div class="arrow-btn" onclick="nextResults()">⬅️</div>`;
-    toggle = true;
-  } 
-  else if (category === 'honor' || category === 'cup') {
-    strip.innerHTML = `
-      <div class="match">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
-      <div class="match">🇪🇸 Cisneros 14 - 14 Ordizia</div>`;
-  } 
-  else if (category === 'b' || category === 'regional') {
-    strip.innerHTML = `
-      <div class="match">🇪🇸 Santboiana 25 - 28 VRAC</div>`;
-  } 
-  else if (category === 'all') {
-    nextResults(); 
-    toggle = false;
-  }
-}
-</script>
+    <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
+  </footer>
 
 </body>
 </html>
