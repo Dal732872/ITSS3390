@@ -47,7 +47,7 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .menu a:hover {
+    .menu a:hover, .menu a.active {
       background-color: #DD9C00;
       color: #000000;
     }
@@ -160,13 +160,13 @@
 
   <div class="menu">
     <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
-    <a onclick="filterContent('national')">National Team</a>
-    <a onclick="filterContent('european')">European Rugby</a>
-    <a onclick="filterContent('honor')">Division de Honor</a>
-    <a onclick="filterContent('b')">Division de Honor B</a>
-    <a onclick="filterContent('cup')">Spanish Cup</a>
-    <a onclick="filterContent('regional')">Regional</a>
-    <a onclick="filterContent('all')">Show All</a>
+    <a onclick="filterContent('national', this)">National Team</a>
+    <a onclick="filterContent('european', this)">European Rugby</a>
+    <a onclick="filterContent('honor', this)">Division de Honor</a>
+    <a onclick="filterContent('b', this)">Division de Honor B</a>
+    <a onclick="filterContent('cup', this)">Spanish Cup</a>
+    <a onclick="filterContent('regional', this)">Regional</a>
+    <a onclick="filterContent('all', this)">Show All</a>
   </div>
 
   <div class="main">
@@ -177,9 +177,9 @@
     </div>
 
     <div class="results-strip" id="resultsStrip">
-      <div class="match">🇪🇸 Santboiana 25 - 28 VRAC</div>
-      <div class="match">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
-      <div class="match">🇪🇸 Cisneros 14 - 14 Ordizia</div>
+      <div class="match" data-cat="b regional">🇪🇸 Santboiana 25 - 28 VRAC</div>
+      <div class="match" data-cat="honor cup">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
+      <div class="match" data-cat="honor cup">🇪🇸 Cisneros 14 - 14 Ordizia</div>
       <div class="arrow-btn" onclick="nextResults()">➡️</div>
     </div>
 
@@ -219,33 +219,55 @@ function nextResults(){
   const strip = document.getElementById("resultsStrip");
   if(!toggle){
     strip.innerHTML = `
-      <div class="match">🇫🇷 Toulouse 19 - 18 La Rochelle</div>
-      <div class="match">🏴 Edinburgh 21 - 24 Glasgow</div>
-      <div class="match">🇮🇹 Benetton 17 - 22 Zebre</div>
+      <div class="match european" data-cat="european">🇫🇷 Toulouse 19 - 18 La Rochelle</div>
+      <div class="match european" data-cat="european">🏴 Edinburgh 21 - 24 Glasgow</div>
+      <div class="match european" data-cat="european">🇮🇹 Benetton 17 - 22 Zebre</div>
       <div class="arrow-btn" onclick="nextResults()">⬅️</div>`;
   } else {
     strip.innerHTML = `
-      <div class="match">🇪🇸 Santboiana 25 - 28 VRAC</div>
-      <div class="match">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
-      <div class="match">🇪🇸 Cisneros 14 - 14 Ordizia</div>
+      <div class="match" data-cat="b regional">🇪🇸 Santboiana 25 - 28 VRAC</div>
+      <div class="match" data-cat="honor cup">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
+      <div class="match" data-cat="honor cup">🇪🇸 Cisneros 14 - 14 Ordizia</div>
       <div class="arrow-btn" onclick="nextResults()">➡️</div>`;
   }
   toggle = !toggle;
 }
 
-function filterContent(category) {
+function filterContent(category, element) {
+  document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+  element.classList.add('active');
+
   const cards = document.querySelectorAll('.news-card');
-  if (category === 'all') {
-    cards.forEach(card => card.style.display = 'block');
-    return;
-  }
   cards.forEach(card => {
-    if (card.classList.contains('cat-' + category)) {
+    if (category === 'all') {
       card.style.display = 'block';
     } else {
-      card.style.display = 'none';
+      card.style.display = card.classList.contains('cat-' + category) ? 'block' : 'none';
     }
   });
+
+  const strip = document.getElementById("resultsStrip");
+  if (category === 'national' || category === 'european') {
+    strip.innerHTML = `
+      <div class="match">🇫🇷 Toulouse 19 - 18 La Rochelle</div>
+      <div class="match">🏴 Edinburgh 21 - 24 Glasgow</div>
+      <div class="match">🇮🇹 Benetton 17 - 22 Zebre</div>
+      <div class="arrow-btn" onclick="nextResults()">⬅️</div>`;
+    toggle = true;
+  } 
+  else if (category === 'honor' || category === 'cup') {
+    strip.innerHTML = `
+      <div class="match">🇪🇸 El Salvador 31 - 20 Alcobendas</div>
+      <div class="match">🇪🇸 Cisneros 14 - 14 Ordizia</div>`;
+  } 
+  else if (category === 'b' || category === 'regional') {
+    strip.innerHTML = `
+      <div class="match">🇪🇸 Santboiana 25 - 28 VRAC</div>`;
+  } 
+  else if (category === 'all') {
+    nextResults(); 
+    toggle = false;
+  }
 }
 </script>
 
