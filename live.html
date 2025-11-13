@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Spanish Rugby - Live Matches</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <style>
+    body { font-family: Verdana; margin:0; background:white; }
+    .topnav { overflow:hidden; background-color:#C01D02; }
+    .topnav a { float:left; color:#f2f2f2; padding:14px 16px; font-size:16px; font-weight:bold; }
+    .topnav a:hover { background-color:#000; color:white; }
+    .topnav a.active { background-color:#DD9C00; color:white; }
+
+    .main { width:100%; padding:15px; }
+    .hero { position:relative; width:100%; max-height:325px; overflow:hidden; }
+    .hero img { width:100%; }
+    .hero-title {
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%, -60%);
+      font-size:85px; font-weight:900;
+      color:#C01D02; text-shadow:4px 4px 12px rgba(0,0,0,0.9);
+      letter-spacing:4px;
+    }
+
+    .video-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(500px, 1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .video-card {
+      background:#f8f8f8;
+      border-radius:8px;
+      border:1px solid #ddd;
+      padding:15px;
+      text-align:center;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .video-card h4 {
+      color:#C01D02;
+      font-weight:bold;
+      margin-bottom:10px;
+    }
+
+    iframe {
+      width:100%;
+      height:300px;
+      border:none;
+      border-radius:5px;
+    }
+
+    footer {
+      background:#e5e5e5;
+      text-align:center;
+      padding:15px;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="standings.html">Standings</a>
+    <a href="results.html">Results</a>
+    <a class="active" href="#">Live</a>
+    <a href="news.html">News</a>
+  </div>
+
+  <div class="main">
+    <div class="hero">
+      <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp">
+      <div class="hero-title">LIVE</div>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <h4>El Salvador vs Alcobendas</h4>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-card">
+        <h4>Santboiana vs VRAC</h4>
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-card">
+        <h4>Ordizia vs Cisneros</h4>
+        <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p></footer>
+</body>
+</html>
