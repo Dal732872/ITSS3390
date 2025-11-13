@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Spanish Rugby - Results</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <style>
+    body { font-family: Verdana; background-color: #FFFFFF; margin: 0; }
+    .topnav { overflow: hidden; background-color: #C01D02; }
+    .topnav a { float: left; color: #f2f2f2; text-align: center; padding: 14px 16px; font-size: 16px; font-weight:bold; }
+    .topnav a:hover { background-color: #000000; color: #FFFFFF; }
+    .topnav a.active { background-color: #DD9C00; color: white; }
+
+    .menu { width: 20%; background-color: #00419B; color: white; padding-top: 15px; text-align: left; }
+    .menu a { display: block; color: #FFFFFF; padding: 10px; text-decoration: none; font-weight: bold; cursor: pointer; }
+    .menu a:hover { background-color: #DD9C00; color: #000000; }
+
+    .main { width: 80%; padding: 15px; overflow: auto; }
+    .hero { position: relative; width: 100%; max-height: 325px; overflow: hidden; }
+    .hero img { width: 100%; }
+    .hero-title { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); font-size: 85px; font-weight: 900; color: #C01D02; text-shadow: 4px 4px 12px rgba(0,0,0,0.9); letter-spacing: 4px; }
+
+    .results-block { margin-top: 25px; }
+    .date-header { background-color: #C01D02; color: white; padding: 10px; font-weight:bold; margin-bottom: 10px; }
+    .match { background-color: #f8f8f8; padding: 10px; border: 1px solid #ddd; display: flex; justify-content: space-between; margin-bottom: 5px; }
+
+    footer { background-color: #e5e5e5; text-align: center; padding: 15px; margin-top: 20px; font-size: 14px; }
+
+    @media(max-width: 768px) {
+      .menu { width: 100%; }
+      .main { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="standings.html">Standings</a>
+  <a class="active" href="#">Results</a>
+  <a href="#">Calendar</a>
+  <a href="#">Live</a>
+</div>
+
+<div style="display:flex;">
+
+  <div class="menu">
+    <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
+    <a>National Team</a>
+    <a>European Rugby</a>
+    <a>Division de Honor</a>
+    <a>Division de Honor B</a>
+    <a>Spanish Cup</a>
+    <a>Regional</a>
+  </div>
+
+  <div class="main">
+
+    <div class="hero">
+      <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp">
+      <div class="hero-title">RESULTS</div>
+    </div>
+
+    <div class="results-block">
+      <div class="date-header">📅 November 2, 2025</div>
+      <div class="match"><span>El Salvador</span><span>31 - 20 Alcobendas</span></div>
+      <div class="match"><span>Santboiana</span><span>25 - 28 VRAC</span></div>
+    </div>
+
+    <div class="results-block">
+      <div class="date-header">📅 October 26, 2025</div>
+      <div class="match"><span>Cisneros</span><span>14 - 14 Ordizia</span></div>
+      <div class="match"><span>Gernika</span><span>12 - 19 Complutense</span></div>
+    </div>
+
+    <div class="results-block">
+      <div class="date-header">📅 October 19, 2025</div>
+      <div class="match"><span>VRAC</span><span>35 - 16 El Salvador</span></div>
+      <div class="match"><span>Ordizia</span><span>29 - 26 Santboiana</span></div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
+</footer>
+
+</body>
+</html>

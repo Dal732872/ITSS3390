@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Spanish Rugby - Standings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <style>
+    body { font-family: Verdana; background-color: #FFFFFF; margin: 0; }
+    .topnav { overflow: hidden; background-color: #C01D02; }
+    .topnav a { float: left; color: #f2f2f2; text-align: center; padding: 14px 16px; font-size: 16px; font-weight:bold; }
+    .topnav a:hover { background-color: #000000; color: #FFFFFF; }
+    .topnav a.active { background-color: #DD9C00; color: white; }
+
+    .menu { width: 20%; background-color: #00419B; color: white; padding-top: 15px; text-align: left; }
+    .menu a { display: block; color: #FFFFFF; padding: 10px; text-decoration: none; font-weight: bold; cursor: pointer; }
+    .menu a:hover { background-color: #DD9C00; color: #000000; }
+
+    .main { width: 80%; padding: 15px; overflow: auto; }
+    .hero { position: relative; width: 100%; max-height: 325px; overflow: hidden; }
+    .hero img { width: 100%; }
+    .hero-title { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); font-size: 85px; font-weight: 900; color: #C01D02; text-shadow: 4px 4px 12px rgba(0,0,0,0.9); letter-spacing: 4px; }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    th { background-color: #C01D02; color: white; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+
+    footer { background-color: #e5e5e5; text-align: center; padding: 15px; margin-top: 20px; font-size: 14px; }
+
+    @media(max-width: 768px) {
+      .menu { width: 100%; }
+      .main { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a class="active" href="#">Standings</a>
+  <a href="results.html">Results</a>
+  <a href="#">Calendar</a>
+  <a href="#">Live</a>
+</div>
+
+<div style="display:flex;">
+
+  <div class="menu">
+    <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
+    <a>National Team</a>
+    <a>European Rugby</a>
+    <a>Division de Honor</a>
+    <a>Division de Honor B</a>
+    <a>Spanish Cup</a>
+    <a>Regional</a>
+  </div>
+
+  <div class="main">
+    <div class="hero">
+      <img src="https://ferugby.es/wp-content/uploads/2023/08/Espana-Los-Leones-Entrenamiento-91-2023-scaled-1-jpg.webp">
+      <div class="hero-title">STANDINGS</div>
+    </div>
+
+    <h3 style="color:#C01D02; margin-top:20px;">División de Honor</h3>
+    <table>
+      <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Drawn</th><th>Lost</th><th>Points</th></tr>
+      <tr><td>1</td><td>VRAC Quesos Entrepinares</td><td>8</td><td>7</td><td>0</td><td>1</td><td>35</td></tr>
+      <tr><td>2</td><td>El Salvador</td><td>8</td><td>6</td><td>0</td><td>2</td><td>30</td></tr>
+      <tr><td>3</td><td>Alcobendas</td><td>8</td><td>5</td><td>0</td><td>3</td><td>27</td></tr>
+      <tr><td>4</td><td>Ordizia</td><td>8</td><td>4</td><td>1</td><td>3</td><td>25</td></tr>
+      <tr><td>5</td><td>Cisneros</td><td>8</td><td>3</td><td>1</td><td>4</td><td>19</td></tr>
+      <tr><td>6</td><td>Santboiana</td><td>8</td><td>2</td><td>1</td><td>5</td><td>13</td></tr>
+    </table>
+
+    <h3 style="color:#C01D02; margin-top:30px;">Division de Honor B</h3>
+    <table>
+      <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Drawn</th><th>Lost</th><th>Points</th></tr>
+      <tr><td>1</td><td>VRAC Emerging</td><td>8</td><td>8</td><td>0</td><td>0</td><td>40</td></tr>
+      <tr><td>2</td><td>U. Burgos</td><td>8</td><td>7</td><td>0</td><td>1</td><td>36</td></tr>
+      <tr><td>3</td><td>Complutense B</td><td>8</td><td>6</td><td>0</td><td>2</td><td>32</td></tr>
+    </table>
+
+  </div>
+</div>
+
+<footer>
+  <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
+</footer>
+
+</body>
+</html>
