@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Spanish Rugby - Standings</title>
@@ -12,7 +12,7 @@
 
     .menu { width: 20%; background-color: #00419B; color: white; padding-top: 15px; text-align: left; }
     .menu a { display: block; color: #FFFFFF; padding: 10px; text-decoration: none; font-weight: bold; cursor: pointer; }
-    .menu a:hover { background-color: #DD9C00; color: #000000; }
+    .menu a:hover, .menu a.active { background-color: #DD9C00; color: #000000; }
 
     .main { width: 80%; padding: 15px; overflow: auto; }
     .hero { position: relative; width: 100%; max-height: 325px; overflow: hidden; }
@@ -26,32 +26,29 @@
 
     footer { background-color: #e5e5e5; text-align: center; padding: 15px; margin-top: 20px; font-size: 14px; }
 
-    @media(max-width: 768px) {
-      .menu { width: 100%; }
-      .main { width: 100%; }
-    }
+    @media(max-width: 768px) { .menu { width: 100%; } .main { width: 100%; } }
   </style>
 </head>
+
 <body>
 
 <div class="topnav">
   <a href="index.html">Home</a>
   <a class="active" href="#">Standings</a>
   <a href="results.html">Results</a>
-  <a href="#">Calendar</a>
-  <a href="#">Live</a>
+  <a href="live.html">Live</a>
+  <a href="news.html">News</a>
 </div>
 
 <div style="display:flex;">
 
   <div class="menu">
     <h4 style="text-align:center; font-weight:bold;">COMPETITIONS</h4>
-    <a>National Team</a>
-    <a>European Rugby</a>
-    <a>Division de Honor</a>
-    <a>Division de Honor B</a>
-    <a>Spanish Cup</a>
-    <a>Regional</a>
+    <a onclick="filterCategory('all')" class="active">Show All</a>
+    <a onclick="filterCategory('honor')">Division de Honor</a>
+    <a onclick="filterCategory('dhb')">Division de Honor B</a>
+    <a onclick="filterCategory('cup')">Spanish Cup</a>
+    <a onclick="filterCategory('regional')">Regional</a>
   </div>
 
   <div class="main">
@@ -60,31 +57,56 @@
       <div class="hero-title">STANDINGS</div>
     </div>
 
-    <h3 style="color:#C01D02; margin-top:20px;">División de Honor</h3>
-    <table>
-      <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Drawn</th><th>Lost</th><th>Points</th></tr>
-      <tr><td>1</td><td>VRAC Quesos Entrepinares</td><td>8</td><td>7</td><td>0</td><td>1</td><td>35</td></tr>
-      <tr><td>2</td><td>El Salvador</td><td>8</td><td>6</td><td>0</td><td>2</td><td>30</td></tr>
-      <tr><td>3</td><td>Alcobendas</td><td>8</td><td>5</td><td>0</td><td>3</td><td>27</td></tr>
-      <tr><td>4</td><td>Ordizia</td><td>8</td><td>4</td><td>1</td><td>3</td><td>25</td></tr>
-      <tr><td>5</td><td>Cisneros</td><td>8</td><td>3</td><td>1</td><td>4</td><td>19</td></tr>
-      <tr><td>6</td><td>Santboiana</td><td>8</td><td>2</td><td>1</td><td>5</td><td>13</td></tr>
-    </table>
+    <div class="standings cat-honor">
+      <h3 style="color:#C01D02; margin-top:20px;">División de Honor</h3>
+      <table>
+        <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Lost</th><th>Points</th></tr>
+        <tr><td>1</td><td>VRAC</td><td>8</td><td>7</td><td>1</td><td>35</td></tr>
+        <tr><td>2</td><td>El Salvador</td><td>8</td><td>6</td><td>2</td><td>30</td></tr>
+        <tr><td>3</td><td>Alcobendas</td><td>8</td><td>5</td><td>3</td><td>27</td></tr>
+      </table>
+    </div>
 
-    <h3 style="color:#C01D02; margin-top:30px;">Division de Honor B</h3>
-    <table>
-      <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Drawn</th><th>Lost</th><th>Points</th></tr>
-      <tr><td>1</td><td>VRAC Emerging</td><td>8</td><td>8</td><td>0</td><td>0</td><td>40</td></tr>
-      <tr><td>2</td><td>U. Burgos</td><td>8</td><td>7</td><td>0</td><td>1</td><td>36</td></tr>
-      <tr><td>3</td><td>Complutense B</td><td>8</td><td>6</td><td>0</td><td>2</td><td>32</td></tr>
-    </table>
+    <div class="standings cat-dhb">
+      <h3 style="color:#C01D02; margin-top:20px;">División de Honor B</h3>
+      <table>
+        <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Lost</th><th>Points</th></tr>
+        <tr><td>1</td><td>VRAC Emerging</td><td>8</td><td>8</td><td>0</td><td>40</td></tr>
+        <tr><td>2</td><td>Burgos</td><td>8</td><td>7</td><td>1</td><td>36</td></tr>
+      </table>
+    </div>
 
+    <div class="standings cat-cup">
+      <h3 style="color:#C01D02; margin-top:20px;">Spanish Cup</h3>
+      <table>
+        <tr><th>Team</th><th>Stage</th><th>Points</th></tr>
+        <tr><td>Alcobendas</td><td>Semi-finals</td><td>12</td></tr>
+        <tr><td>El Salvador</td><td>Semi-finals</td><td>10</td></tr>
+      </table>
+    </div>
+
+    <div class="standings cat-regional">
+      <h3 style="color:#C01D02; margin-top:20px;">Regional League</h3>
+      <table>
+        <tr><th>Pos</th><th>Team</th><th>Played</th><th>Won</th><th>Lost</th><th>Points</th></tr>
+        <tr><td>1</td><td>VRAC B</td><td>6</td><td>6</td><td>0</td><td>30</td></tr>
+        <tr><td>2</td><td>Salamanca RC</td><td>6</td><td>4</td><td>2</td><td>22</td></tr>
+      </table>
+    </div>
   </div>
 </div>
 
-<footer>
-  <p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p>
-</footer>
+<footer><p>2025 Spanish Rugby News | Contact: info@spanishrugby.com</p></footer>
 
+<script>
+function filterCategory(cat) {
+  document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.standings').forEach(div => {
+    if (cat === 'all' || div.classList.contains('cat-' + cat)) div.style.display = 'block';
+    else div.style.display = 'none';
+  });
+}
+</script>
 </body>
 </html>
